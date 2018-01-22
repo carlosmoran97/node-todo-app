@@ -13,19 +13,19 @@ MongoClient.connect('mongodb://localhost:27017/TodosApp', (err, db) => {
     // }, (err, result) => {
     //     console.log(result.ops);
     // });
-    db.collection('Users').find({ name: 'Carlos' }).toArray().then((docs) => {
-        console.log('Users');
-        console.log(JSON.stringify(docs, undefined, 2));
-    }, (err) => {
-        console.log('Unable to fecth todos:',err);
-    });
-
-    // count
-    // db.collection('Todos').count().then((count) => {
-    //     console.log(`Todos count: ${count}`);
+    // db.collection('Users').find({ name: 'Carlos' }).toArray().then((docs) => {
+    //     console.log('Users');
+    //     console.log(JSON.stringify(docs, undefined, 2));
     // }, (err) => {
-    //     console.log('Unable to count todos: ',err);
+    //     console.log('Unable to fecth todos:',err);
     // });
 
-    //db.close();
+    count
+    db.collection('Todos').count().then((count) => {
+        console.log(`Todos count: ${count}`);
+    }, (err) => {
+        console.log('Unable to count todos: ',err);
+    });
+
+    db.close();    
 });
